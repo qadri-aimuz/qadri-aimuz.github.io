@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Qadri AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-top: 80px;">
+    <div class="bg-glow bg-glow-cyan"></div>
+    <div class="bg-glow bg-glow-emerald"></div>
+    <div class="grid-overlay"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="container nav-content">
+            <div class="logo">
+                <i data-lucide="cpu" class="logo-icon text-cyan"></i>
+                <span>QADRI <span class="text-cyan">AI</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html" class="active-link">Features</a></li>
+                <li><a href="preview.html">Preview</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+            </ul>
+            <a href="purchase.html" class="btn btn-primary">Get Access</a>
+        </div>
+    </nav>
+
+    <section class="features section" style="min-height: 80vh;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Engineered for <span class="text-cyan">Power</span></h2>
+                <p>Everything you need in a single, powerful desktop application.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card glass-effect reveal">
+                    <div class="feature-icon bg-cyan-dim"><i data-lucide="book" class="text-cyan"></i></div>
+                    <h3 id="fb-f1-title">Loading...</h3>
+                    <p id="fb-f1-desc">Loading...</p>
+                </div>
+
+                <div class="feature-card glass-effect reveal">
+                    <div class="feature-icon bg-emerald-dim"><i data-lucide="terminal" class="text-emerald"></i></div>
+                    <h3 id="fb-f2-title">Loading...</h3>
+                    <p id="fb-f2-desc">Loading...</p>
+                </div>
+
+                <div class="feature-card glass-effect reveal">
+                    <div class="feature-icon bg-cyan-dim"><i data-lucide="zap" class="text-cyan"></i></div>
+                    <h3 id="fb-f3-title">Loading...</h3>
+                    <p id="fb-f3-desc">Loading...</p>
+                </div>
+
+                <div class="feature-card glass-effect reveal">
+                    <div class="feature-icon bg-emerald-dim"><i data-lucide="mic" class="text-emerald"></i></div>
+                    <h3 id="fb-f4-title">Loading...</h3>
+                    <p id="fb-f4-desc">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo"><i data-lucide="cpu" class="text-cyan"></i> QADRI AI</div>
+            <p>&copy; 2026 Qadri AI Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

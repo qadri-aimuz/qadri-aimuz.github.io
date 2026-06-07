@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qadri AI - The Ultimate Desktop Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow bg-glow-cyan"></div>
+    <div class="bg-glow bg-glow-emerald"></div>
+    <div class="grid-overlay"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="container nav-content">
+            <div class="logo">
+                <i data-lucide="cpu" class="logo-icon text-cyan"></i>
+                <span>QADRI <span class="text-cyan">AI</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active-link">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="preview.html">Preview</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+            </ul>
+            <a href="purchase.html" class="btn btn-primary">Get Access</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">v1.0.115 RELEASED</div>
+            <h1 class="hero-title" id="fb-home-headline">Loading...</h1>
+            <p class="hero-subtitle" id="fb-home-subheadline">Loading data securely...</p>
+            <div class="hero-actions">
+                <a href="purchase.html" class="btn btn-primary btn-large">
+                    <i data-lucide="shopping-cart"></i> Buy Lifetime License
+                </a>
+                <a href="features.html" class="btn btn-outline btn-large">
+                    <i data-lucide="play-circle"></i> Explore Features
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="text-emerald">✔</span> 100% Offline Capable</div>
+                <div class="stat"><span class="text-emerald">✔</span> Windows Compatible</div>
+                <div class="stat"><span class="text-emerald">✔</span> Free Updates</div>
+            </div>
+        </div>
+    </header>
+
+    <footer class="footer" style="position: absolute; bottom: 0; width: 100%;">
+        <div class="container footer-content">
+            <div class="logo"><i data-lucide="cpu" class="text-cyan"></i> QADRI AI</div>
+            <p>&copy; 2026 Qadri AI Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

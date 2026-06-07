@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Qadri AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--border-cyan);
+            box-shadow: var(--glow-cyan);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+    </style>
+</head>
+<body style="padding-top: 80px;">
+    <div class="bg-glow bg-glow-cyan"></div>
+    <div class="bg-glow bg-glow-emerald"></div>
+    <div class="grid-overlay"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="container nav-content">
+            <div class="logo">
+                <i data-lucide="cpu" class="logo-icon text-cyan"></i>
+                <span>QADRI <span class="text-cyan">AI</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="preview.html" class="active-link">Preview</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+            </ul>
+            <a href="purchase.html" class="btn btn-primary">Get Access</a>
+        </div>
+    </nav>
+
+    <section class="section" style="min-height: 80vh;">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In <span class="text-emerald">Action</span></h2>
+                <p>Watch the demo below to see Qadri AI's capabilities.</p>
+            </div>
+            
+            <div class="video-container glass-effect reveal">
+                <iframe id="fb-preview-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo"><i data-lucide="cpu" class="text-cyan"></i> QADRI AI</div>
+            <p>&copy; 2026 Qadri AI Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
