@@ -20,7 +20,9 @@ const els = {
 
     previewVideo: document.getElementById('fb-preview-video'),
 
-    purPrice: document.getElementById('fb-pur-price'),
+    purPriceMonthly: document.getElementById('fb-pur-price-monthly'),
+    purPriceLifetime: document.getElementById('fb-pur-price-lifetime'),
+    purPriceSource: document.getElementById('fb-pur-price-source'),
     purEpNum: document.getElementById('fb-pur-ep-num'),
     purEpName: document.getElementById('fb-pur-ep-name'),
     purWaNum: document.getElementById('fb-pur-wa-num'),
@@ -53,7 +55,10 @@ onValue(websiteRef, (snapshot) => {
     }
 
     // Purchase
-    if(els.purPrice) els.purPrice.innerHTML = (data.purchase?.price || defaultContent.purchase.price) + ' <span class="price-period">/ one-time</span>';
+    if(els.purPriceMonthly) els.purPriceMonthly.innerHTML = (data.purchase?.price_monthly || defaultContent.purchase.price_monthly) + ' <span class="price-period">/ month</span>';
+    if(els.purPriceLifetime) els.purPriceLifetime.innerHTML = (data.purchase?.price_lifetime || defaultContent.purchase.price_lifetime) + ' <span class="price-period">/ one-time</span>';
+    if(els.purPriceSource) els.purPriceSource.innerHTML = (data.purchase?.price_sourcecode || defaultContent.purchase.price_sourcecode);
+    
     if(els.purEpNum) els.purEpNum.innerText = data.purchase?.easypaisa_number || defaultContent.purchase.easypaisa_number;
     if(els.purEpName) els.purEpName.innerText = data.purchase?.easypaisa_name || defaultContent.purchase.easypaisa_name;
     if(els.purWaNum) els.purWaNum.innerText = data.purchase?.whatsapp_number || defaultContent.purchase.whatsapp_number;
@@ -63,6 +68,29 @@ onValue(websiteRef, (snapshot) => {
         if(waNum.startsWith('0')) waNum = '92' + waNum.substring(1);
         els.purWaLink.href = `https://wa.me/${waNum}?text=I%20want%20to%20buy%20Qadri%20AI%20Lifetime%20License`;
     }
+
+    // SEO Updates
+    const title = data.seo?.title || defaultContent.seo.title;
+    const desc = data.seo?.description || defaultContent.seo.description;
+    const keywords = data.seo?.keywords || defaultContent.seo.keywords;
+
+    document.title = title;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = "description";
+        document.head.appendChild(metaDesc);
+    }
+    metaDesc.content = desc;
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.name = "keywords";
+        document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.content = keywords;
 });
 
 // Scroll Reveal Animation

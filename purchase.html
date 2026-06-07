@@ -7,6 +7,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .pricing-card.premium {
+            border-color: var(--primary-cyan);
+            box-shadow: var(--glow-cyan);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+    </style>
 </head>
 <body style="padding-top: 80px;">
     <div class="bg-glow bg-glow-cyan"></div>
@@ -20,7 +39,7 @@
                 <span>QADRI <span class="text-cyan">AI</span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="preview.html">Preview</a></li>
                 <li><a href="purchase.html" class="active-link">Purchase</a></li>
@@ -30,46 +49,85 @@
 
     <section class="pricing section" style="min-height: 80vh;">
         <div class="container">
-            <div class="pricing-card glass-effect reveal">
-                <div class="pricing-header">
-                    <h2>Lifetime Access</h2>
-                    <div class="price" id="fb-pur-price">Loading...</div>
-                </div>
-                
-                <ul class="pricing-features">
-                    <li><i data-lucide="check" class="text-emerald"></i> Full Desktop Application (Windows)</li>
-                    <li><i data-lucide="check" class="text-emerald"></i> Lifetime License Key</li>
-                    <li><i data-lucide="check" class="text-emerald"></i> All Future Updates</li>
-                    <li><i data-lucide="check" class="text-emerald"></i> Premium Support</li>
-                </ul>
+            <div class="section-header text-center" style="margin-bottom: 20px;">
+                <h2>Choose Your <span class="text-emerald">Plan</span></h2>
+                <p>Unlock the full power of Qadri AI.</p>
+            </div>
 
-                <div class="payment-info">
-                    <h3>How to Purchase:</h3>
-                    <p>Send the payment via EasyPaisa and WhatsApp the screenshot to receive your License Key instantly.</p>
-                    
-                    <div class="payment-details">
-                        <div class="detail-box">
-                            <i data-lucide="smartphone" class="text-emerald"></i>
-                            <div>
-                                <span class="label">EasyPaisa Account</span>
-                                <span class="value" id="fb-pur-ep-num">...</span>
-                                <span class="name" id="fb-pur-ep-name">...</span>
-                            </div>
+            <div class="pricing-grid">
+                <!-- Monthly Plan -->
+                <div class="pricing-card glass-effect reveal">
+                    <div class="pricing-header">
+                        <h2>Monthly Access</h2>
+                        <div class="price" id="fb-pur-price-monthly">Loading...</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Perfect for trying it out.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check" class="text-emerald"></i> Full Desktop Application</li>
+                        <li><i data-lucide="check" class="text-emerald"></i> 1 Month License Key</li>
+                        <li><i data-lucide="check" class="text-emerald"></i> Standard Support</li>
+                    </ul>
+                </div>
+
+                <!-- Lifetime Plan -->
+                <div class="pricing-card glass-effect premium reveal" style="transition-delay: 100ms;">
+                    <div class="pricing-header">
+                        <h2>Lifetime License</h2>
+                        <div class="price text-cyan" id="fb-pur-price-lifetime">Loading...</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Best value for power users.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check" class="text-cyan"></i> Full Desktop Application</li>
+                        <li><i data-lucide="check" class="text-cyan"></i> Lifetime License Key</li>
+                        <li><i data-lucide="check" class="text-cyan"></i> All Future Updates</li>
+                        <li><i data-lucide="check" class="text-cyan"></i> Priority Support</li>
+                    </ul>
+                </div>
+
+                <!-- Source Code -->
+                <div class="pricing-card glass-effect reveal" style="transition-delay: 200ms;">
+                    <div class="pricing-header">
+                        <h2>Source Code</h2>
+                        <div class="price" id="fb-pur-price-source">Loading...</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">For developers & businesses.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check" class="text-emerald"></i> Complete Source Code</li>
+                        <li><i data-lucide="check" class="text-emerald"></i> Resell Rights</li>
+                        <li><i data-lucide="check" class="text-emerald"></i> Admin Panel Included</li>
+                        <li><i data-lucide="check" class="text-emerald"></i> Setup Guidance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="payment-info glass-effect reveal" style="margin-top: 50px; padding: 40px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">How to Purchase</h3>
+                <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">Send the payment for your desired plan via EasyPaisa and WhatsApp the screenshot to receive your License Key instantly.</p>
+                
+                <div class="payment-details" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+                    <div class="detail-box">
+                        <i data-lucide="smartphone" class="text-emerald"></i>
+                        <div>
+                            <span class="label">EasyPaisa Account</span>
+                            <span class="value" id="fb-pur-ep-num">...</span>
+                            <span class="name" id="fb-pur-ep-name">...</span>
                         </div>
-                        
-                        <div class="detail-box">
-                            <i data-lucide="message-circle" class="text-cyan"></i>
-                            <div>
-                                <span class="label">WhatsApp Support</span>
-                                <span class="value" id="fb-pur-wa-num">...</span>
-                            </div>
+                    </div>
+                    
+                    <div class="detail-box">
+                        <i data-lucide="message-circle" class="text-cyan"></i>
+                        <div>
+                            <span class="label">WhatsApp Support</span>
+                            <span class="value" id="fb-pur-wa-num">...</span>
                         </div>
                     </div>
                 </div>
 
-                <a href="#" target="_blank" id="fb-pur-wa-link" class="btn btn-whatsapp btn-large w-100">
-                    <i data-lucide="message-square"></i> Message on WhatsApp
-                </a>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" target="_blank" id="fb-pur-wa-link" class="btn btn-whatsapp btn-large">
+                        <i data-lucide="message-square"></i> Send Screenshot on WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
     </section>

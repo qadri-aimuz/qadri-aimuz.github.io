@@ -32,12 +32,19 @@ export const defaultContent = {
         feature4_desc: "Hands-free interaction. Speak to your AI natively and let it perform tasks across your Windows operating system."
     },
     preview: {
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Example URL
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     purchase: {
-        price: "Rs. 5,000",
+        price_monthly: "Rs. 500",
+        price_lifetime: "Rs. 8,000",
+        price_sourcecode: "Contact for Price",
         easypaisa_number: "0349 7831816",
         easypaisa_name: "Muhammad Muzamil Qadri",
         whatsapp_number: "03134012039"
+    },
+    seo: {
+        title: "Qadri AI - The Ultimate Desktop Assistant",
+        description: "An advanced hybrid AI desktop assistant featuring authentic Ahl-e-Sunnat guidance, powerful cybersecurity simulations, and an unparalleled futuristic interface.",
+        keywords: "qadri ai, qadri, qadri.ai, qadri.com, qadri.org, muzamil qadri, desktop assistant, artificial intelligence, islamic ai, ahl e sunnat ai, cyber security simulator, smart desktop, ai software, qadri tech, qadri admin"
     }
 };
