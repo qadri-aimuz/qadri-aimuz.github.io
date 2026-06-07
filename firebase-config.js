@@ -29,7 +29,15 @@ export const defaultContent = {
         feature3_title: "Matrix Visuals",
         feature3_desc: "Toggle the 'Matrix Mode' for an immersive, sci-fi aesthetic. Real-time telemetry and system monitoring built-in.",
         feature4_title: "Voice Commands",
-        feature4_desc: "Hands-free interaction. Speak to your AI natively and let it perform tasks across your Windows operating system."
+        feature4_desc: "Hands-free interaction. Speak to your AI natively and let it perform tasks across your Windows operating system.",
+        feature5_title: "Global Broadcasting",
+        feature5_desc: "Instantly receive important alerts, updates, and news from the administrators directly inside the desktop environment.",
+        feature6_title: "Secure File Vault",
+        feature6_desc: "Encrypt and securely store your private documents and sensitive software files locally with zero tracking.",
+        feature7_title: "Autonomous Agents",
+        feature7_desc: "Delegate complex, multi-step operations to intelligent background subagents that work autonomously to save your time.",
+        feature8_title: "Live Chat Support",
+        feature8_desc: "Face an issue? Connect with the Qadri AI team instantly through the built-in encrypted live chat interface."
     },
     preview: {
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"

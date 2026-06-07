@@ -52,7 +52,52 @@
         </div>
     </header>
 
-    <footer class="footer" style="position: absolute; bottom: 0; width: 100%;">
+    <!-- TERMINAL DEMO SECTION -->
+    <section class="section bg-[#020305]" style="border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cyber <span class="text-emerald">Sentinel</span> Engine</h2>
+                <p>Experience the raw power of the built-in hacker console.</p>
+            </div>
+            <div class="terminal-container mx-auto max-w-4xl glass-effect p-0 overflow-hidden" style="border-color: var(--border-emerald);">
+                <div class="terminal-header bg-[#080b10] px-4 py-2 border-b border-emerald-500/20 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    <span class="ml-4 text-xs font-mono text-emerald-500/70">root@qadri-ai:~</span>
+                </div>
+                <div class="terminal-body p-6 font-mono text-sm h-64 overflow-y-auto" id="terminal-output" style="color: #10b981;">
+                    <!-- Typed dynamically by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+        <div class="container max-w-3xl">
+            <div class="section-header">
+                <h2>Frequently Asked <span class="text-cyan">Questions</span></h2>
+                <p>Everything you need to know about the software.</p>
+            </div>
+            <div class="faq-container space-y-4">
+                <div class="faq-item glass-effect p-6 cursor-pointer" onclick="this.classList.toggle('active')">
+                    <h3 class="text-lg font-bold flex justify-between items-center">Does it work entirely offline? <i data-lucide="chevron-down" class="text-cyan"></i></h3>
+                    <p class="faq-answer text-gray-400 mt-4 hidden">Yes! Qadri AI is designed to run locally on your Windows machine. Your data, vaults, and AI processes remain 100% private and never leave your PC.</p>
+                </div>
+                <div class="faq-item glass-effect p-6 cursor-pointer" onclick="this.classList.toggle('active')">
+                    <h3 class="text-lg font-bold flex justify-between items-center">What happens if I forget my Admin Password? <i data-lucide="chevron-down" class="text-cyan"></i></h3>
+                    <p class="faq-answer text-gray-400 mt-4 hidden">You can use the master fallback code '786' to access the Admin Panel in emergencies, ensuring you never lose control over your website and licenses.</p>
+                </div>
+                <div class="faq-item glass-effect p-6 cursor-pointer" onclick="this.classList.toggle('active')">
+                    <h3 class="text-lg font-bold flex justify-between items-center">How do the Autonomous Agents work? <i data-lucide="chevron-down" class="text-cyan"></i></h3>
+                    <p class="faq-answer text-gray-400 mt-4 hidden">You can assign a complex task (like "Research this topic and summarize it"), and the software will spawn invisible background subagents to fetch, process, and compile the data automatically while you do other work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
         <div class="container footer-content">
             <div class="logo"><i data-lucide="cpu" class="text-cyan"></i> QADRI AI</div>
             <p>&copy; 2026 Qadri AI Team. All rights reserved.</p>

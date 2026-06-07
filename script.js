@@ -17,6 +17,14 @@ const els = {
     f3Desc: document.getElementById('fb-f3-desc'),
     f4Title: document.getElementById('fb-f4-title'),
     f4Desc: document.getElementById('fb-f4-desc'),
+    f5Title: document.getElementById('fb-f5-title'),
+    f5Desc: document.getElementById('fb-f5-desc'),
+    f6Title: document.getElementById('fb-f6-title'),
+    f6Desc: document.getElementById('fb-f6-desc'),
+    f7Title: document.getElementById('fb-f7-title'),
+    f7Desc: document.getElementById('fb-f7-desc'),
+    f8Title: document.getElementById('fb-f8-title'),
+    f8Desc: document.getElementById('fb-f8-desc'),
 
     previewVideo: document.getElementById('fb-preview-video'),
 
@@ -47,6 +55,14 @@ onValue(websiteRef, (snapshot) => {
     if(els.f3Desc) els.f3Desc.innerText = data.features?.feature3_desc || defaultContent.features.feature3_desc;
     if(els.f4Title) els.f4Title.innerText = data.features?.feature4_title || defaultContent.features.feature4_title;
     if(els.f4Desc) els.f4Desc.innerText = data.features?.feature4_desc || defaultContent.features.feature4_desc;
+    if(els.f5Title) els.f5Title.innerText = data.features?.feature5_title || defaultContent.features.feature5_title;
+    if(els.f5Desc) els.f5Desc.innerText = data.features?.feature5_desc || defaultContent.features.feature5_desc;
+    if(els.f6Title) els.f6Title.innerText = data.features?.feature6_title || defaultContent.features.feature6_title;
+    if(els.f6Desc) els.f6Desc.innerText = data.features?.feature6_desc || defaultContent.features.feature6_desc;
+    if(els.f7Title) els.f7Title.innerText = data.features?.feature7_title || defaultContent.features.feature7_title;
+    if(els.f7Desc) els.f7Desc.innerText = data.features?.feature7_desc || defaultContent.features.feature7_desc;
+    if(els.f8Title) els.f8Title.innerText = data.features?.feature8_title || defaultContent.features.feature8_title;
+    if(els.f8Desc) els.f8Desc.innerText = data.features?.feature8_desc || defaultContent.features.feature8_desc;
 
     // Preview
     if(els.previewVideo) {
@@ -118,3 +134,50 @@ document.addEventListener('mousemove', (e) => {
         if(glows[1]) glows[1].style.transform = `translate(${x * -50}px, ${y * -50}px)`;
     }
 });
+
+// Terminal Typing Effect
+const terminalLines = [
+    "Initializing Qadri AI Core System...",
+    "Loading Ahl-e-Sunnat Knowledge Base: OK",
+    "Mounting Sentinel Security Modules...",
+    "Bypassing standard firewall limits... [SUCCESS]",
+    "Executing subagent_network.sh...",
+    "Subagent 1: Memory sync complete.",
+    "Subagent 2: Threat detection online.",
+    "Connecting to Master Server... Connection Established.",
+    "System Ready. Awaiting user input..."
+];
+
+const terminalOutput = document.getElementById("terminal-output");
+let currentLine = 0;
+let currentChar = 0;
+
+function typeTerminal() {
+    if(!terminalOutput) return;
+    
+    if(currentLine < terminalLines.length) {
+        if(currentChar === 0) {
+            terminalOutput.innerHTML += "<div><span class='text-emerald-500/70'>$</span> <span id='line-" + currentLine + "'></span></div>";
+        }
+        
+        const lineElement = document.getElementById("line-" + currentLine);
+        lineElement.innerHTML += terminalLines[currentLine].charAt(currentChar);
+        currentChar++;
+        
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        
+        if(currentChar < terminalLines[currentLine].length) {
+            setTimeout(typeTerminal, Math.random() * 50 + 20); // Random typing speed
+        } else {
+            currentLine++;
+            currentChar = 0;
+            setTimeout(typeTerminal, Math.random() * 800 + 400); // Pause between lines
+        }
+    } else {
+        terminalOutput.innerHTML += "<div class='mt-4 text-cyan-400 blink'>_</div>";
+    }
+}
+
+if(terminalOutput) {
+    setTimeout(typeTerminal, 1000);
+}
