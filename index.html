@@ -23,6 +23,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="/" class="active-link">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="preview.html">Preview</a></li>
                 <li><a href="purchase.html">Purchase</a></li>
@@ -33,7 +34,7 @@
 
     <header class="hero">
         <div class="container hero-content">
-            <div class="hero-badge">v1.0.115 RELEASED</div>
+            <div class="hero-badge" id="fb-home-version">v1.0.115 RELEASED</div>
             <h1 class="hero-title" id="fb-home-headline">Loading...</h1>
             <p class="hero-subtitle" id="fb-home-subheadline">Loading data securely...</p>
             <div class="hero-actions">
@@ -45,9 +46,9 @@
                 </a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><span class="text-emerald">✔</span> 100% Offline Capable</div>
-                <div class="stat"><span class="text-emerald">✔</span> Windows Compatible</div>
-                <div class="stat"><span class="text-emerald">✔</span> Free Updates</div>
+                <div class="stat"><span class="text-emerald">✔</span> <span id="fb-home-stat1">100% Offline Capable</span></div>
+                <div class="stat"><span class="text-emerald">✔</span> <span id="fb-home-stat2">Windows Compatible</span></div>
+                <div class="stat"><span class="text-emerald">✔</span> <span id="fb-home-stat3">Free Updates</span></div>
             </div>
         </div>
     </header>
@@ -73,25 +74,43 @@
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- WHAT QADRI AI CAN DO SECTION -->
     <section class="section">
-        <div class="container max-w-3xl">
+        <div class="container max-w-4xl">
             <div class="section-header">
-                <h2>Frequently Asked <span class="text-cyan">Questions</span></h2>
-                <p>Everything you need to know about the software.</p>
+                <h2>What is <span class="text-cyan">Qadri AI?</span></h2>
+                <p>A comprehensive overview of what this powerful desktop assistant can do for you.</p>
             </div>
-            <div class="faq-container space-y-4">
-                <div class="faq-item glass-effect p-6 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <h3 class="text-lg font-bold flex justify-between items-center">Does it work entirely offline? <i data-lucide="chevron-down" class="text-cyan"></i></h3>
-                    <p class="faq-answer text-gray-400 mt-4 hidden">Yes! Qadri AI is designed to run locally on your Windows machine. Your data, vaults, and AI processes remain 100% private and never leave your PC.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="glass-effect p-8 rounded-2xl hover:border-cyan-500/50 transition-colors">
+                    <i data-lucide="book-open" class="text-cyan w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white" id="fb-home-info1-title">Authentic Deeni Knowledge</h3>
+                    <p class="text-gray-400" id="fb-home-info1-desc">Qadri AI is trained strictly on the authentic teachings of Ahl-e-Sunnat wal Jamaat. It can provide accurate answers regarding Quran, Hadith, Fiqh, and Masail without any deviation.</p>
                 </div>
-                <div class="faq-item glass-effect p-6 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <h3 class="text-lg font-bold flex justify-between items-center">What happens if I forget my Admin Password? <i data-lucide="chevron-down" class="text-cyan"></i></h3>
-                    <p class="faq-answer text-gray-400 mt-4 hidden">You can use the master fallback code '786' to access the Admin Panel in emergencies, ensuring you never lose control over your website and licenses.</p>
+                
+                <div class="glass-effect p-8 rounded-2xl hover:border-emerald-500/50 transition-colors">
+                    <i data-lucide="terminal" class="text-emerald w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white" id="fb-home-info2-title">Cyber Sentinel Console</h3>
+                    <p class="text-gray-400" id="fb-home-info2-desc">Experience a fully simulated hacker terminal. Run powerful cyber-security tools and commands locally, learning ethical hacking in a safe, immersive matrix-style environment.</p>
                 </div>
-                <div class="faq-item glass-effect p-6 cursor-pointer" onclick="this.classList.toggle('active')">
-                    <h3 class="text-lg font-bold flex justify-between items-center">How do the Autonomous Agents work? <i data-lucide="chevron-down" class="text-cyan"></i></h3>
-                    <p class="faq-answer text-gray-400 mt-4 hidden">You can assign a complex task (like "Research this topic and summarize it"), and the software will spawn invisible background subagents to fetch, process, and compile the data automatically while you do other work.</p>
+
+                <div class="glass-effect p-8 rounded-2xl hover:border-cyan-500/50 transition-colors">
+                    <i data-lucide="mic" class="text-cyan w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white" id="fb-home-info3-title">Advanced Voice Control</h3>
+                    <p class="text-gray-400" id="fb-home-info3-desc">Control your entire PC hands-free. Just speak to Qadri AI, and it will execute commands, search files, open programs, and fetch information instantly.</p>
+                </div>
+
+                <div class="glass-effect p-8 rounded-2xl hover:border-emerald-500/50 transition-colors">
+                    <i data-lucide="bot" class="text-emerald w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white" id="fb-home-info4-title">Autonomous Background Agents</h3>
+                    <p class="text-gray-400" id="fb-home-info4-desc">Give Qadri AI a complex task, and its subagents will quietly work in the background, researching and compiling data while you focus on other important work.</p>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-2xl md:col-span-2 hover:border-cyan-500/50 transition-colors text-center">
+                    <i data-lucide="shield-check" class="text-cyan w-8 h-8 mb-4 mx-auto"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white" id="fb-home-info5-title">100% Offline & Private File Vault</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto" id="fb-home-info5-desc">Your privacy is our top priority. Qadri AI operates entirely offline on your local Windows machine. It features a military-grade encrypted File Vault where you can hide your personal documents, software, and sensitive data with zero risk of tracking or data leaks.</p>
                 </div>
             </div>
         </div>

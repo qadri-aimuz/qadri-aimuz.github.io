@@ -8,6 +8,32 @@ lucide.createIcons();
 const els = {
     homeHeadline: document.getElementById('fb-home-headline'),
     homeSubheadline: document.getElementById('fb-home-subheadline'),
+    homeVersion: document.getElementById('fb-home-version'),
+    homeStat1: document.getElementById('fb-home-stat1'),
+    homeStat2: document.getElementById('fb-home-stat2'),
+    homeStat3: document.getElementById('fb-home-stat3'),
+    homeInfo1Title: document.getElementById('fb-home-info1-title'),
+    homeInfo1Desc: document.getElementById('fb-home-info1-desc'),
+    homeInfo2Title: document.getElementById('fb-home-info2-title'),
+    homeInfo2Desc: document.getElementById('fb-home-info2-desc'),
+    homeInfo3Title: document.getElementById('fb-home-info3-title'),
+    homeInfo3Desc: document.getElementById('fb-home-info3-desc'),
+    homeInfo4Title: document.getElementById('fb-home-info4-title'),
+    homeInfo4Desc: document.getElementById('fb-home-info4-desc'),
+    homeInfo5Title: document.getElementById('fb-home-info5-title'),
+    homeInfo5Desc: document.getElementById('fb-home-info5-desc'),
+    
+    // About
+    aboutFounderName: document.getElementById('fb-about-founderName'),
+    aboutFounderTitle: document.getElementById('fb-about-founderTitle'),
+    aboutFounderBio1: document.getElementById('fb-about-founderBio1'),
+    aboutFounderBio2: document.getElementById('fb-about-founderBio2'),
+    aboutMission: document.getElementById('fb-about-mission'),
+    aboutTotalMembers: document.getElementById('fb-about-totalMembers'),
+    aboutMaleExperts: document.getElementById('fb-about-maleExperts'),
+    aboutFemaleExperts: document.getElementById('fb-about-femaleExperts'),
+    aboutContactNumber: document.getElementById('fb-about-contactNumber'),
+    aboutWaLink: document.getElementById('fb-about-waLink'),
     
     f1Title: document.getElementById('fb-f1-title'),
     f1Desc: document.getElementById('fb-f1-desc'),
@@ -45,6 +71,37 @@ onValue(websiteRef, (snapshot) => {
     // Home
     if(els.homeHeadline) els.homeHeadline.innerHTML = data.home?.headline || defaultContent.home.headline;
     if(els.homeSubheadline) els.homeSubheadline.innerText = data.home?.subheadline || defaultContent.home.subheadline;
+    if(els.homeVersion) els.homeVersion.innerText = data.home?.versionBadge || defaultContent.home.versionBadge;
+    if(els.homeStat1) els.homeStat1.innerText = data.home?.stat1 || defaultContent.home.stat1;
+    if(els.homeStat2) els.homeStat2.innerText = data.home?.stat2 || defaultContent.home.stat2;
+    if(els.homeStat3) els.homeStat3.innerText = data.home?.stat3 || defaultContent.home.stat3;
+    
+    if(els.homeInfo1Title) els.homeInfo1Title.innerText = data.home?.info1_title || defaultContent.home.info1_title;
+    if(els.homeInfo1Desc) els.homeInfo1Desc.innerText = data.home?.info1_desc || defaultContent.home.info1_desc;
+    if(els.homeInfo2Title) els.homeInfo2Title.innerText = data.home?.info2_title || defaultContent.home.info2_title;
+    if(els.homeInfo2Desc) els.homeInfo2Desc.innerText = data.home?.info2_desc || defaultContent.home.info2_desc;
+    if(els.homeInfo3Title) els.homeInfo3Title.innerText = data.home?.info3_title || defaultContent.home.info3_title;
+    if(els.homeInfo3Desc) els.homeInfo3Desc.innerText = data.home?.info3_desc || defaultContent.home.info3_desc;
+    if(els.homeInfo4Title) els.homeInfo4Title.innerText = data.home?.info4_title || defaultContent.home.info4_title;
+    if(els.homeInfo4Desc) els.homeInfo4Desc.innerText = data.home?.info4_desc || defaultContent.home.info4_desc;
+    if(els.homeInfo5Title) els.homeInfo5Title.innerText = data.home?.info5_title || defaultContent.home.info5_title;
+    if(els.homeInfo5Desc) els.homeInfo5Desc.innerText = data.home?.info5_desc || defaultContent.home.info5_desc;
+
+    // About
+    if(els.aboutFounderName) els.aboutFounderName.innerText = data.about?.founderName || defaultContent.about.founderName;
+    if(els.aboutFounderTitle) els.aboutFounderTitle.innerText = data.about?.founderTitle || defaultContent.about.founderTitle;
+    if(els.aboutFounderBio1) els.aboutFounderBio1.innerHTML = data.about?.founderBio1 || defaultContent.about.founderBio1;
+    if(els.aboutFounderBio2) els.aboutFounderBio2.innerHTML = data.about?.founderBio2 || defaultContent.about.founderBio2;
+    if(els.aboutMission) els.aboutMission.innerHTML = data.about?.missionStatement || defaultContent.about.missionStatement;
+    if(els.aboutTotalMembers) els.aboutTotalMembers.innerText = data.about?.totalMembers || defaultContent.about.totalMembers;
+    if(els.aboutMaleExperts) els.aboutMaleExperts.innerText = data.about?.maleExperts || defaultContent.about.maleExperts;
+    if(els.aboutFemaleExperts) els.aboutFemaleExperts.innerText = data.about?.femaleExperts || defaultContent.about.femaleExperts;
+    if(els.aboutContactNumber) els.aboutContactNumber.innerText = data.about?.contactNumber || defaultContent.about.contactNumber;
+    if(els.aboutWaLink) {
+        let waNum = (data.about?.contactNumber || defaultContent.about.contactNumber).replace(/\s|\+/g, '');
+        if(waNum.startsWith('0')) waNum = '92' + waNum.substring(1);
+        els.aboutWaLink.href = `https://wa.me/${waNum}?text=Hello%20Muzamil!`;
+    }
 
     // Features
     if(els.f1Title) els.f1Title.innerText = data.features?.feature1_title || defaultContent.features.feature1_title;
